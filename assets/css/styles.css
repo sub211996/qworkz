@@ -1,0 +1,57 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+.navbar{
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+}
+.navbar-brand{
+    position:relative;
+}
+.navbar-brand::after{
+    width: 389px;
+    content: " ";
+    background-image: url("../img/header.png");
+    /* background-size: 389px 111px; */
+    position: absolute;
+    left: 0px;
+    top: -8px;
+    height:111px;
+    z-index:-1;
+}
+.banner{
+    height:100vh;
+    display:flex;
+    align-items: center;
+    position:relative;
+}
+.backgrounds{
+    position: absolute;
+    top:0;
+    width:0;
+    height:100%;
+    width: 100%;
+    z-index:-1;
+}
+.backgrounds .banner_main--img{
+    position:absolute;
+    top:0;
+    right:0;
+    width:115vh;
+}
+/* .banner_secondary--img{
+    height:50vh;
+} */
+.banner_secondary--img{
+
+}
