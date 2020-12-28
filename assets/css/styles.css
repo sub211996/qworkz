@@ -190,7 +190,71 @@ body{
 
 /* START PORTFOLIO */
 .portfolio{
-    
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)), url("../img/portfolio-bg.jpg");
+    /* height:80vh; */
+    width:100%;
+    text-align: center;
+    color: #fff;
+    padding-top:50px;
+    padding-bottom:80px;
+}
+.portfolio h1{
+    font-weight:700;
+}
+.portfolio .contact--btn{
+    background: #fff;
+    color: var(--color-blue);
+    margin: 50px auto 0 auto;
+    display: block;
+    width: 17%;
+    text-align: center;
+}
+.portfolio .owl-filter-bar{
+    margin-bottom:60px;
+}
+.portfolio .owl-filter-bar .item{
+    color:#fff;
+    font-size:16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-right:25px;
+    cursor:pointer;
+    position: relative;
+}
+.portfolio .owl-filter-bar .item.active::after{
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    display: block;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 7px;
+    height: 7px;
+    background: #fff;
+    border-radius: 100%;
+}
+.portfolio .owl-filter-bar .item::before{
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    display: block;
+    right: -18px;
+    width: 1px;
+    height: 14px;
+    background: #fff;
+    border-radius: 100%;
+}
+.portfolio .owl-filter-bar .item:last-child{
+    margin-right:0;
+}
+.portfolio .owl-filter-bar .item:last-child::before{
+    display: none;
+}
+.portfolio .owl-carousel .item{
+    padding: 28px 44px 14px 44px;
+}
+.portfolio .owl-carousel .center .item{
+    padding:0;
 }
 /* END PORTFOLIO */
 

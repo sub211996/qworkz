@@ -14,7 +14,38 @@ $( document ).ready(function() {
             }
         }
     });
+    
 
+    var owl = $('.portfolio .owl-carousel').owlCarousel({
+        loop:true,
+        center: true,
+        margin:10,
+        nav:true,
+        dots:false,
+        stagePadding: 50,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:1
+            },
+            1000:{
+                items:2
+            }
+        }
+    });
+
+    
+
+    $('.owl-filter-bar').on( 'click', ' .item', function() {
+        var $item = $(this);
+        var filter = $item.data( 'owl-filter' )
+        console.log($item);
+        owl.owlcarousel2_filter( filter );
+    });
+              
+    $('.owl-filter-bar')
 
     $('.testimony .owl-carousel').owlCarousel({
         rtl:true,
@@ -75,4 +106,22 @@ $( document ).ready(function() {
         }
     });
 
+    let scrollpos = window.scrollY
+    const header = document.querySelector("nav.navbar")
+    const header_height = header.offsetHeight
+
+    const add_class_on_scroll = () => header.classList.add("fade-in")
+    const remove_class_on_scroll = () => header.classList.remove("fade-in")
+
+    window.addEventListener('scroll', function() { 
+    scrollpos = window.scrollY;
+
+    if (scrollpos >= header_height) { add_class_on_scroll() }
+    else { remove_class_on_scroll() }
+
+    // console.log(scrollpos)
+  })
+
 });
+
+console.log(document.querySelector('.portfolio .center'))
