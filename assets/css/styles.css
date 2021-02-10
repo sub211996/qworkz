@@ -12,6 +12,10 @@ body{
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 }
+button:focus{
+    outline:none;
+}
+/* START NAVBAR */
 .navbar{
     position: fixed;
     top:0;
@@ -19,9 +23,13 @@ body{
     right:0;
     padding:0;
     z-index:999;
+    transition: 0.4s all ease;
 }
 .navbar-brand{
     position:relative;
+}
+.navbar-toggler{
+    color:#fff;
 }
 .navbar-brand::after{
     width: 389px;
@@ -57,12 +65,31 @@ body{
     border-radius: 100%;
 }
 
+.fade-in {
+    transition: 0.4s all ease;
+}
+.fade-in.navbar{
+    background:#000;
+    padding:10px;
+}
+.fade-in .navbar-brand::after{
+    top:-117px;
+    transition: 0.4s all ease;
+}
+.fade-out .navbar-brand::after{
+    top:0;
+    transition: 0.4s all ease;
+}
+/* END NAVBAR */
+
+
 /* START BANNER */
 .banner{
     height:100vh;
     display:flex;
     align-items: center;
     position:relative;
+    overflow: hidden;
 }
 .backgrounds{
     position: absolute;
@@ -190,7 +217,7 @@ body{
 
 /* START PORTFOLIO */
 .portfolio{
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)), url("../img/portfolio-bg.jpg");
+    background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.6)), url("../img/portfolio-bg.jpg");
     /* height:80vh; */
     width:100%;
     text-align: center;
@@ -255,6 +282,27 @@ body{
 }
 .portfolio .owl-carousel .center .item{
     padding:0;
+}
+.portfolio .owl-nav{
+    position: absolute;
+    display: flex;
+    top: 43%;
+    justify-content: space-between;
+    width: 100%;
+    pointer-events: none;
+    padding:0 15px;
+}
+.portfolio .owl-nav .owl-prev, .portfolio .owl-nav .owl-next{
+    pointer-events: auto;
+    font-size:22px!important;
+    background: var(--color-blue)!important;
+    border-radius: 100%;
+    width:50px;
+    height:50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 8px 21px -3px #08bfc3bf;
 }
 /* END PORTFOLIO */
 
@@ -442,3 +490,65 @@ footer p i.fa-envelope-o{
     top: 4px;
 }
 /* END FOOTER */
+
+
+/* Start Media Queries */
+@media(max-width: 476px){
+    .navbar{
+        background: #000;
+        padding: 10px;
+    }
+    .navbar .navbar-brand::after{
+        display: none;
+    }
+    .navbar-brand img{
+        height:32px;
+    }
+    .banner{
+        background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.09));
+    }
+    .banner .container{
+        text-align: center;
+        color:#fff;
+    }
+    .portfolio .owl-carousel .item {
+        padding: 0;
+    }
+    .portfolio .contact--btn{
+        width:66%;
+        margin: 50px auto 0;
+    }
+    .moto p br{
+        display: none;
+    }
+    .work-areas .item {
+        padding: 0 15px;
+    }
+    .portfolio p br, .newsletter h1 br{
+        display: none;
+    }
+    .portfolio .owl-filter-bar .item{
+        margin-right:10px;
+        font-size: 10px;
+    }
+    .portfolio .owl-filter-bar .item::before{
+        bottom: 1px;
+        right: -8px;
+    }
+    .testimony--text{
+        text-align: center;
+    }
+    .testimony--text p{
+        padding-right:0;
+    }
+    .newsletter{
+        padding:10px;
+        border-radius: 0;
+    }
+    .footer-copy{
+        font-size: 12px;
+    }
+    .font-size-large{
+        font-size:2.5rem;
+    }
+}
